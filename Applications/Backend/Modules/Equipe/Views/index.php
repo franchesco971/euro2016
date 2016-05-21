@@ -5,7 +5,7 @@
         <?php 
             foreach ($listeEquipes as $equipe) {
         ?>
-            <p><?php echo $equipe['libelle'];?> <a href="equipe/update/<?php echo $equipe['idEquipe']; ?>">update</a></p> 
+            <p><div class="flag flag-<?php echo $equipe['flag']; ?>"></div><?php echo $equipe['libelle'];?> <a href="equipe/update/<?php echo $equipe['idEquipe']; ?>">update</a></p> 
         <?php }
         ?>
         </div>

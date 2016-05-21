@@ -10,6 +10,7 @@
         <meta http-equiv="Content-type" content="text/html; charset=utf-8" />        
         <link rel="stylesheet" href="/css/Envision.css" type="text/css" />
         <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+        <link href="/css/flags.css" rel="stylesheet" type="text/css"/>
     </head>
     
     <body>
