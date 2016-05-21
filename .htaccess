@@ -1,1 +1,4 @@
-# Do not remove this line, otherwise mod_rewrite rules will stop workingRewriteBase /
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^euro2016bp2i.pe.hu/$ [NC,OR]
+RewriteCond %{REQUEST_URI} !Web/
+RewriteRule (.*) /Web/$1 [L]

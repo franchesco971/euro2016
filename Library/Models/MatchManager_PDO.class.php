@@ -6,8 +6,7 @@
     
     class MatchManager_PDO extends MatchManager
     {
-		//public function getListResultats($EquipeManager,$debut = -1, $limite = -1)
-		public function getListResultats($debut = -1, $limite = -1)
+        public function getListResultats($debut = -1, $limite = -1)
         {
 			$listeResultats = array();
            
@@ -25,67 +24,28 @@
                 $sql .= ' LIMIT '.(int) $limite.' OFFSET '.(int) $debut;
             }
 			
-			// echo  $sql;
-			// try
-			// {
-            	// echo '****1<br/>';
-				$requete = $this->dao->query($sql);
-				// $match = $requete->fetchAll(\PDO::FETCH_OBJ);
-			// }
-			// catch(Exception $e)
-			// {
-				// echo '****<br/>';
-				// exit('<b>Catched exception at line '. $e->getLine() .' :</b> '. $e->getMessage());
-			// }
+            $requete = $this->dao->query($sql);
 			
             while ($data = $requete->fetch(\PDO::FETCH_ASSOC))
             {
-                //$match['dateAjout'] = new \DateTime($news['dateAjout']);
-                //$match['dateModif'] = new \DateTime($news['dateModif']);
-				
-				//$match['equipe1'] = $EquipeManager->getUnique($match['idEquipe1']);
-				//$match['equipe2'] = $EquipeManager->getUnique($match['idEquipe2']);
-				
-				//$unmatch=$match['equipe1'];
-				// $eq=$match->getEquipe1();
-				 //echo $eq['libelle'];
-				//echo $match['equipe1']['libelle'].'***'.$unmatch['libelle'];
-				//echo $match['dateMatch'];
-				//$unmatch=new match($match);
-				
-				//echo $unmatch->dateMatch();
-				//echo $unmatch['dateMatch'];
-				// $dataE1=array('libelle'=>$data['libelle']);
-				// $dataE2=array('libelle'=>$data['libelle']);
-				
-				// $equipe1=new Equipe(array('idEquipe'=>$data['idEquipe1'],'libelle'=>$data['libelle']));
-				//$equipe1=new Equipe($dataE1);
-				$match=new match($data);
-				//echo $data['libelle'].'**'.$data['libelle2'];
-				$match->setEquipe1(new Equipe(array('idEquipe'=>$data['idEquipe1'],'libelle'=>$data['libelle'],'flag'=>$data['flag1'])));
-				// echo $equipe1['libelle'].'****';
-				// $match->setEquipe1($equipe1);
-				$match->setEquipe2(new Equipe(array('idEquipe'=>$data['idEquipe2'],'libelle'=>$data['libelle2'],'flag'=>$data['flag2'])));
+                $match=new match($data);
+                //echo $data['libelle'].'**'.$data['libelle2'];
+                $match->setEquipe1(new Equipe(array('idEquipe'=>$data['idEquipe1'],'libelle'=>$data['libelle'],'flag'=>$data['flag1'])));
+                // echo $equipe1['libelle'].'****';
+                // $match->setEquipe1($equipe1);
+                $match->setEquipe2(new Equipe(array('idEquipe'=>$data['idEquipe2'],'libelle'=>$data['libelle2'],'flag'=>$data['flag2'])));
 				
                 $listeResultats[] = $match;
-				//$listeResultats[] = $unmatch;
             }
-			
-			//}
-			//catch(Exception $e)
-			//{
-			//	echo '****<br/>';
-			//	exit('<b>Catched exception at line '. $e->getLine() .' :</b> '. $e->getMessage());
-			//}
             
             $requete->closeCursor();
             
             return $listeResultats;
 		}
 		
-		public function getUnique($id)
+    public function getUnique($id)
         {
-            $sql='	SELECT idMatch,idMatch as id,dateMatch,idEquipe1,idEquipe2,score1,score2
+            $sql='	SELECT idGagnant,idMatch,idMatch as id,dateMatch,idEquipe1,idEquipe2,score1,score2
 						,equipe1.libelle , equipe1.flag as flag1 
 						,equipe2.libelle as libelle2, equipe2.flag as flag2 					
 					FROM `match` , equipe as equipe1,equipe as equipe2
