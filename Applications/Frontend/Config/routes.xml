@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<routes>
+    <route url="/classement.html" module="Classement" action="index"/>
+    
+    <route url="/" module="Match" action="index" />
+    <route url="/match-([0-9]+)\.html" module="Match" action="show" vars="id"/>
+    <route url="/parier\.html" module="Match" action="pari"/>
+    
+    <route url="/deconnexion\.html" module="Parieur" action="deconnexion" />
+    <route url="/pari/match-([0-9]+)\.html" module="Parieur" action="parier" vars="id"/>
+    <route url="/modifPari/match-([0-9]+)\.html" module="Parieur" action="modifPari" vars="id"/>
+    <route url="/inscription.html" module="Parieur" action="inscription"/>
+    
+    <route url="/news-([0-9]+)\.html" module="News" action="show" vars="id"/>
+    <route url="/commenter-([0-9]+)\.html" module="News" action="insertComment" vars="news" />
+    
+    <route url="/reglement.html" module="Reglement" action="index"/>
+    
+    <route url="/equipe-([0-9]+)\.html" module="Equipe" action="show" vars="id"/>
+    
+</routes>
