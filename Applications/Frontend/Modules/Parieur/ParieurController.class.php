@@ -24,50 +24,47 @@ class ParieurController extends \Library\BackController
                 // $this->page->addVar('listeCommentaires', $CommentaireManager->getList());
         }
 
-        public function executeInscription(\Library\HTTPRequest $request)
-        {						
-                // Si le formulaire a été envoyé
-    if ($request->method() == 'POST')
-    {
-        //echo 'c passé!!!!!';
-                        $parieur = new \Library\Entities\Parieur(array(
-            'pseudo' => $request->postData('pseudo'),
-            'pass' => $request->postData('pass'),
-                                'pass_verif' => $request->postData('pass_verif'),
-            'email' => $request->postData('email')
-        ));
-    }
-    else
-    {
-                        // echo 'c pa passé!!!!!';
-                        $parieur = new \Library\Entities\Parieur;
-                }
+    public function executeInscription(\Library\HTTPRequest $request)
+    {						
+        // Si le formulaire a été envoyé
+        if ($request->method() == 'POST')
+        {
+            $parieur = new \Library\Entities\Parieur(array(
+                'pseudo' => $request->postData('pseudo'),
+                'pass' => $request->postData('pass'),
+                'pass_verif' => $request->postData('pass_verif'),
+                'email' => $request->postData('email')
+            ));
+        }
+        else
+        {
+            $parieur = new \Library\Entities\Parieur;
+        }
 
-                $formBuilder = new \Library\FormBuilder\ParieurFormBuilder($parieur);
-                //echo 'c passé!!!!!';
-    $formBuilder->build();
+        $formBuilder = new \Library\FormBuilder\ParieurFormBuilder($parieur);
+        $formBuilder->build();
 
-    $form = $formBuilder->form();
+        $form = $formBuilder->form();
 
-                if($request->method() == 'POST' && $form->isValid())
-    {
-                        if($parieur->pass()==$parieur->pass_verif())
-                        {
-                                $this->managers->getManagerOf('Parieur')->save($parieur);
+        if($request->method() == 'POST' && $form->isValid())
+        {
+            if($parieur->pass()==$parieur->pass_verif())
+            {
+                $this->managers->getManagerOf('Parieur')->save($parieur);
                 $this->app->user()->setFlash('Vous avez bien été ajouté, merci !');
-                        }
-                        else
-                        {
-                                $this->app->user()->setFlash('Les mots de passe sont diff&eacute;rents');	
-                        }
-                        //echo 'c valid****';
-                }
+                $this->app->httpResponse()->redirect('/');
+            }
+            else
+            {
+                $this->app->user()->setFlash('Les mots de passe sont diff&eacute;rents');	
+            }
+        }
 
-                $this->page->addVar('form', $form->createView());
+        $this->page->addVar('form', $form->createView());
 
                 // On ajoute une définition pour le titre
-    $this->page->addVar('title', 'Inscription');
-        }
+        $this->page->addVar('title', 'Inscription');
+    }
 
         public function executeDeconnexion(\Library\HTTPRequest $request)
         {
@@ -82,7 +79,7 @@ class ParieurController extends \Library\BackController
             {
                     $this->managers->getManagerOf('Parieur')->parier($request->postData('idGagnant'),$request->postData('idMatch'));
                     $match = $this->managers->getManagerOf('Match')->getUnique($request->postData('idMatch'));
-                    if($match->idGagnant())
+                    if(!is_null($match->idGagnant()))
                     $this->managers->getManagerOf('Match')->setWinners($match);
                     
                     $this->app->user()->setFlash('V&ocirc;tre pari a été pris en compte');

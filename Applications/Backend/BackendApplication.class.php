@@ -5,20 +5,21 @@
     {
         public function __construct()
         {
-            //echo 'dzdazdaz3<br/>';
-			parent::__construct();
+            parent::__construct();
             
             $this->name = 'Backend';
         }
         
         public function run()
         {
-            if ($this->user->isAuthenticated())
+            if ($this->user->isAuthenticated() && !isset($_SESSION['user']))
             {
                 $controller = $this->getController();
             }
             else
             {
+                $this->user->setAuthenticated(false);
+                $this->user->unsetUser();
                 $controller = new Modules\Connexion\ConnexionController($this, 'Connexion', 'index');
             }
             

@@ -9,6 +9,7 @@
 	Et voil&agrave;, l'Euro 2016 commence enfin, et ils ne seront pas les seuls &agrave; jouer.<br/>
     Alors &agrave; vos claviers ,et pariez sur tous les matches &agrave; venir.<br/>
     Bonne chance &agrave; tous et &agrave; toutes.
+    <span class="txtrouge">Les développeurs je vous avertis direct n'essayez de cracker le site et de manière général considérez que le site date de 2012</span>
 </p>
 <?php
 	if(!$user->isAuthenticated())

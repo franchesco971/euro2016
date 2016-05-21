@@ -5,10 +5,10 @@
   - si vous n'avez pas le bon pronostic vous ne  marquez pas de points&nbsp;<br>
   - si jamais vous n'avez pas eu le temps de  rentrer votre pronostic avant le début du match on considérera que vous avez  choisi nul automatiquement. Pour ce type de pronostic ( si jamais il s'avère  que le match se termine sur un nul ) et afin d'être fair play envers les autres  qui n'auraient pas eu le bon résultat, vous ne marquerez qu'1 point et non pas  3.<br>
   - lorsque nous arriverons aux quarts de final  les point seront doublés ( afin d'avoir au classement final le moins d'ex aequo  possible )<br>
-- bien évidemment dès lors que le match sera  commencé vous ne pourrez plus faire votre pronostic -&gt; donc considéré comme  match nul ( pour les deux du fond qui aurait perdu le fil du mail )</p>
-<p>- Le classement des  salariés sera affiché chaque jour afin de suivre son évolution</p>
+- bien évidemment dès lors que le match sera  commencé vous ne pourrez plus faire votre pronostic -&gt; donc considéré comme  match nul</p>
+<p>- Le classement sera affiché chaque jour afin de suivre son évolution</p>
 <p>&nbsp;</p>
-<p>Venons en à  l'enjeu  principal : pour toutes les personnes qui souhaiteraient jouer une  participation de 5€ sera demandé afin de constituer la mise finale à  remporter.  La distribution de cette mise sera faite à  la fin selon le classement et comme  cela :<br>
+<p>Venons en à  l'enjeu  principal : pour toutes les personnes qui souhaiteraient jouer une  participation de 5€ sera demandée afin de constituer la mise finale à  remporter.  La distribution de cette mise sera faite à  la fin selon le classement et comme  cela :<br>
   - le 1er -&gt; 50% de la mise totale<br>
   - le 2eme -&gt; 30% de la mise totale<br>
   - le 3eme -&gt; 20% de la mise totale<br>

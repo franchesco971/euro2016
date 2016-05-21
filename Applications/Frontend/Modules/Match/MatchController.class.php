@@ -11,7 +11,7 @@ class MatchController extends \Library\BackController
         {
             $pseudo = $request->postData('pseudo');
             $pass = $request->postData('pass');
-            $ParieurManager = $this->managers->getManagerOf('parieur');
+            $ParieurManager = $this->managers->getManagerOf('Parieur');
             //echo 'c pass***'.$pseudo.'***'.$pass;
             if($pseudo!='' && $pass!='')
             {
