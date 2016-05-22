@@ -57,7 +57,7 @@
     {
 ?>
 	<p>
-		<?php echo $Commentaire['Parieur']['pseudo'];?> &agrave; comment&eacute; le  
+            <span style="color: #337ab7;"><?php echo $Commentaire['Parieur']['pseudo'];?></span> a comment&eacute; le  
 		<a href="match-<?php echo $Commentaire['idMatch']; ?>.html"> match<?php echo $Commentaire['idMatch']; ?><!--'.$tab['idEquipe1'].'-'.$tab['idEquipe2'].'--></a>
         <?php echo $Commentaire::date_new('d/m/Y \&\a\g\r\a\v\e\; H:i:s',$Commentaire['dateCommentaire'])?>:<br/>
 		<?php echo $Commentaire['contenu']; ?>

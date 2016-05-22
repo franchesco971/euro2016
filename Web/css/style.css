@@ -4,11 +4,13 @@ body
 	background-repeat:no-repeat;
 	background-position:50% 0;
 	width:560px;
-	height:900px;
-	/*padding-left:40px;*/
+	/*height:900px;
+	padding-left:40px;*/
 	padding-top:130px;
 	//margin:auto;
 	font-family:Arial;
+        min-height:900px;
+        margin-bottom: 20px;
 }
 a
 {
@@ -134,7 +136,7 @@ h2
 	font-weight:bold;
 	font-size:12px;
 }*/
-#menu h3
+/*#menu h3
 {
 	font-weight:bold;
 	font-size:12px;
@@ -145,7 +147,7 @@ h2
 	font-size:12px;
 	font-weight:bold;
 	color:#016ba7;
-}
+}*/
 td
 {
 	border:1px solid black;	

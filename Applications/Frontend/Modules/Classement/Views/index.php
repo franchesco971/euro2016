@@ -1,28 +1,3 @@
-<style type="text/css">
-	table
-	{
-		border:1px solid #016ba7;
-		border-spacing:0;
-	}
-	.headertr
-	{
-		background-color:#016ba7;
-		border:1px solid #016ba7;
-		color:white;
-	}
-	.headertr th
-	{
-		border-right:1px solid #dee1e2;
-	}
-	th
-	{
-		/*line-height:0px;*/
-	}
-	tr td
-	{
-		border:1px solid #dee1e2;
-	}
-</style>
 <div id="classement">
 	<div style="float:left">
 		<h3>Classement par Joueur</h3>
@@ -31,7 +6,7 @@
 		if($classement)
 		{
 			?>
-            <table >
+            <table class="table table-striped">
 				<tr class="headertr"><th>Place</th><th>Pseudo</th><th>Points</th><!--<th>Service</th>--></tr>
 			<?php
 			foreach($classement as $Key =>$parieur)
